@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Copy, Cpu, ArrowRight, Check } from 'lucide-react';
+import { Copy, Cpu, ArrowRight, Check, Shield, Terminal, Layers, Lock, Code2 } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { BentoCard } from '../components/BentoCard';
@@ -21,11 +21,47 @@ export const LandingView = ({ setView, user }) => {
       <Navbar setView={setView} user={user} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 min-h-[90vh] flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-        
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-dashed border-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-[spin_20s_linear_infinite]" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-dashed border-white/10 rounded-full translate-x-1/2 translate-y-1/2 animate-[spin_30s_linear_infinite_reverse]" />
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+        {/* Layered Background System */}
+        <div className="absolute inset-0 z-0">
+          {/* 1. Base Grid (Dot) */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] bg-size-[32px_32px]" />
+          
+          {/* 2. Secondary Line Grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_20%,transparent_100%)]" />
+
+          {/* 3. Primary Glow (Central) */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.3, 0.4, 0.3]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/[0.03] blur-[120px] rounded-full" 
+          />
+
+          {/* 4. Accent Glows (Moving) */}
+          <motion.div 
+            animate={{ 
+              x: [-20, 20, -20],
+              y: [-10, 10, -10]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-800/10 blur-[80px] rounded-full" 
+          />
+          <motion.div 
+            animate={{ 
+              x: [20, -20, 20],
+              y: [10, -10, 10]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-zinc-800/10 blur-[100px] rounded-full" 
+          />
+
+          {/* 5. Refined Decorative Circles */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/[0.05] rounded-full animate-[spin_60s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/[0.03] rounded-full animate-[spin_90s_linear_infinite_reverse]" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.div 
@@ -35,7 +71,7 @@ export const LandingView = ({ setView, user }) => {
             className="space-y-12"
           >
             <h1 
-              className="text-6xl lg:text-[120px] font-extrabold tracking-tighter leading-[0.85] max-w-5xl mx-auto bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent"
+              className="text-6xl lg:text-[120px] font-black tracking-[-0.04em] leading-[0.85] max-w-5xl mx-auto bg-[linear-gradient(to_bottom,#fff,#71717a)] bg-clip-text text-transparent"
               dangerouslySetInnerHTML={{ __html: t.hero.title }}
             />
 
@@ -45,12 +81,14 @@ export const LandingView = ({ setView, user }) => {
               </p>
             </div>
 
-            {/* Command Box */}
             <div className="max-w-md mx-auto pt-8">
               <div 
                 onClick={handleCopy}
-                className="bg-zinc-900/40 backdrop-blur-sm border border-white/10 rounded-full py-3.5 px-6 flex items-center justify-between group hover:border-white/20 transition-all cursor-pointer shadow-2xl active:scale-95"
+                className="bg-zinc-900/40 backdrop-blur-sm border border-white/10 rounded-full py-3.5 px-6 flex items-center justify-between group/copy hover:border-white/20 transition-all cursor-pointer shadow-2xl active:scale-95 relative"
               >
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-2.5 py-1.5 bg-black border border-white/10 rounded-lg text-[10px] text-zinc-300 opacity-0 group-hover/copy:opacity-100 transition-all pointer-events-none z-50 shadow-2xl font-bold tracking-widest uppercase whitespace-nowrap">
+                  Click to copy
+                </div>
                 <div className="flex items-center gap-3 font-mono text-[13px] tracking-tight">
                   <span className="text-zinc-600 font-medium">$</span>
                   <span className="text-zinc-200 font-medium">pip install ilu-slm@latest</span>
@@ -77,7 +115,7 @@ export const LandingView = ({ setView, user }) => {
                         exit={{ opacity: 0, scale: 0.5 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Copy className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
+                        <Copy className="w-4 h-4 text-zinc-500 group-hover/copy:text-white transition-colors" />
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -88,16 +126,18 @@ export const LandingView = ({ setView, user }) => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-12">
               <button 
                 onClick={() => setView('signup')}
-                className="w-full sm:w-auto bg-white text-black font-bold px-12 py-3.5 rounded-md hover:bg-zinc-200 transition-all active:scale-95 text-sm shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-bold text-sm tracking-tight hover:scale-105 active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
               >
-                {t.hero.ctaPrimary}
+                Start Building Free
               </button>
-              <button 
-                onClick={() => setView('login')}
-                className="w-full sm:w-auto bg-black text-white border border-white/10 font-bold px-12 py-3.5 rounded-md hover:bg-zinc-900 transition-all active:scale-95 text-sm"
-              >
-                {t.hero.ctaSecondary}
-              </button>
+              <div className="relative group/tooltip">
+                <button 
+                  onClick={() => setView('download')}
+                  className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/10 text-white rounded-full font-bold text-sm tracking-tight hover:bg-white/5 active:scale-95 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Download Local Weights</span>
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -182,18 +222,23 @@ export const LandingView = ({ setView, user }) => {
             description={t.features.cards.handlers.description}
           />
 
-          <div className="md:col-span-1 p-8 rounded-3xl bg-zinc-900/20 border border-white/10 flex flex-col justify-between group hover:border-white/20 transition-colors relative overflow-hidden">
+          <div className="md:col-span-1 p-8 rounded-3xl bg-[#0A0A0A] border border-white/10 flex flex-col justify-between group/card hover:border-white/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(255,255,255,0.06)] relative overflow-hidden cursor-pointer">
             <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-size-[20px_20px]" />
             <div className="relative z-10 space-y-4">
               <div className="flex gap-1">
-                {[1,2,3].map(i => <div key={i} className="w-1 h-1 rounded-full bg-white/20" />)}
+                {[1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />)}
               </div>
-              <h3 className="text-2xl font-bold">ILU v1.0</h3>
-              <p className="text-sm text-zinc-500">{t.features.releaseNotes}</p>
+              <h3 className="text-2xl font-bold tracking-tight">ILU v1.0</h3>
+              <p className="text-sm font-medium text-zinc-500 leading-relaxed">{t.features.releaseNotes}</p>
             </div>
             <div className="relative z-10 flex justify-end mt-4">
-              <div className="w-10 h-10 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                <ArrowRight className="w-4 h-4" />
+              <div className="relative group/arrow">
+                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center group-hover/card:bg-white group-hover/card:text-black group-hover/card:shadow-[0_0_20px_rgba(255,255,255,0.5)] group-hover/card:scale-110 transition-all duration-300">
+                  <ArrowRight className="w-5 h-5 -rotate-45 group-hover/card:rotate-0 transition-transform duration-300" />
+                </div>
+                <div className="absolute bottom-full right-0 mb-3 px-2.5 py-1.5 bg-black border border-white/10 rounded-lg text-[10px] text-zinc-300 opacity-0 group-hover/arrow:opacity-100 transition-all pointer-events-none z-50 shadow-2xl font-bold tracking-widest uppercase whitespace-nowrap">
+                  Read Notes
+                </div>
               </div>
             </div>
           </div>
@@ -311,6 +356,99 @@ export const LandingView = ({ setView, user }) => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Deep-Dive Features Section */}
+      <section className="max-w-7xl mx-auto px-6 py-40 relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.2),transparent)]" />
+        
+        <div className="text-center space-y-6 mb-24">
+          <motion.h2 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter"
+          >
+             Zero-Compromise <br/> <span className="bg-[linear-gradient(to_bottom,white,#71717a)] bg-clip-text text-transparent">Architecture.</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           {/* Card 1 */}
+           <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.1 }}
+               className="bg-[#050505] border border-white/10 rounded-3xl p-10 hover:border-white/20 transition-all duration-500 group relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1"
+           >
+               <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 blur-[60px] rounded-full group-hover:bg-emerald-500/20 transition-colors pointer-events-none -translate-y-1/2 translate-x-1/2" />
+               <Terminal className="w-8 h-8 text-zinc-400 mb-8 group-hover:text-emerald-400 transition-colors" />
+               <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Native CLI Integration</h3>
+               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Instantly drop into your terminal. ILU integrates flawlessly with Bash and Zsh out of the box, delivering intelligent command suggestions and shell script generation with native latency.</p>
+           </motion.div>
+           
+           {/* Card 2 */}
+           <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.2 }}
+               className="bg-[#050505] border border-white/10 rounded-3xl p-10 hover:border-white/20 transition-all duration-500 group relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1"
+           >
+               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 blur-[60px] rounded-full group-hover:bg-blue-500/20 transition-colors pointer-events-none -translate-y-1/2 translate-x-1/2" />
+               <Layers className="w-8 h-8 text-zinc-400 mb-8 group-hover:text-blue-400 transition-colors" />
+               <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Multi-Modal Memory</h3>
+               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Built-in vector data structures ensure continuous state. ILU remembers complex context streams across heavily fragmented workspace sessions and completely isolated development environments.</p>
+           </motion.div>
+
+           {/* Card 3 */}
+           <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.3 }}
+               className="bg-[#050505] border border-white/10 rounded-3xl p-10 hover:border-white/20 transition-all duration-500 group relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1"
+           >
+               <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 blur-[60px] rounded-full group-hover:bg-amber-500/20 transition-colors pointer-events-none -translate-y-1/2 translate-x-1/2" />
+               <Lock className="w-8 h-8 text-zinc-400 mb-8 group-hover:text-amber-400 transition-colors" />
+               <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Zero-Telemetry Core</h3>
+               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">We stripped all remote tracking endpoints. Your proprietary codebase never leaves your local physical hardware, guaranteeing complete regulatory compliance right out of the box.</p>
+           </motion.div>
+
+           {/* Card 4 */}
+           <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.4 }}
+               className="md:col-span-3 bg-[#0A0A0A] border border-white/10 rounded-3xl p-10 hover:border-white/20 transition-all duration-500 group relative overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-12"
+           >
+               <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_120%,rgba(255,255,255,0.05),transparent_100%)] pointer-events-none" />
+               
+               <div className="flex-1 space-y-6 relative z-10 w-full">
+                 <Code2 className="w-10 h-10 text-white" />
+                 <div>
+                   <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Extensible Plugin Ecosystem</h3>
+                   <p className="text-zinc-400 text-base leading-relaxed max-w-2xl">
+                     ILU isn't just an interface; it's a platform. Build custom middleware, hook into native system APIs, and script automated workflows using our lightweight Typescript extension architecture. Deploy your custom logic directly onto the local edge.
+                   </p>
+                 </div>
+               </div>
+               
+               <div className="w-full md:w-[450px] shrink-0 bg-black/80 border border-white/10 rounded-2xl p-6 shadow-2xl relative z-10 font-mono text-xs text-zinc-300 leading-relaxed overflow-hidden">
+                 <div className="flex gap-2 mb-4 border-b border-white/5 pb-4">
+                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                   <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                 </div>
+                 <div className="opacity-70 group-hover:opacity-100 transition-opacity whitespace-pre overflow-x-auto no-scrollbar">
+                   <span className="text-emerald-400">import</span> &#123; ILUPlugin &#125; <span className="text-emerald-400">from</span> <span className="text-amber-300">'@ilu/core'</span>;<br/><br/>
+                   <span className="text-blue-400">export</span> <span className="text-blue-400">default</span> <span className="text-purple-400">class</span> CustomAnalyzer <span className="text-purple-400">extends</span> ILUPlugin &#123;<br/>
+                   &nbsp;&nbsp;<span className="text-blue-400">async</span> <span className="text-yellow-200">onMessage</span>(ctx) &#123;<br/>
+                   &nbsp;&nbsp;&nbsp;&nbsp;await ctx.<span className="text-yellow-200">parseAST</span>(ctx.codeBlock);<br/>
+                   &nbsp;&nbsp;&nbsp;&nbsp;return ctx.<span className="text-yellow-200">generateRefactor</span>();<br/>
+                   &nbsp;&nbsp;&#125;<br/>
+                   &#125;
+                 </div>
+               </div>
+           </motion.div>
         </div>
       </section>
 

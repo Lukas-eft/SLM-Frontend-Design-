@@ -6,12 +6,16 @@ import { ChatView } from './views/ChatView';
 import { LoadingView } from './views/LoadingView';
 import { ProfileView } from './views/ProfileView';
 import { DocsView } from './views/DocsView';
+import { SettingsView } from './views/SettingsView';
+import { DownloadView } from './views/DownloadView';
+import { CommandPalette } from './components/CommandPalette';
 
 export default function App() {
   const [view, setView] = useState('landing');
   const [isLoading, setIsLoading] = useState(true);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
 
   useEffect(() => {
     // Simulate initial app load - shorter duration for better UX
@@ -20,6 +24,11 @@ export default function App() {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  // Global Scroll Restoration
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('ilu_user');
     return savedUser ? JSON.parse(savedUser) : null;
@@ -116,6 +125,24 @@ export default function App() {
               user={user} 
             />
           )}
+          {view === 'settings' && (
+            <SettingsView 
+              setView={setView} 
+            />
+          )}
+          {view === 'download' && (
+            <DownloadView 
+              setView={setView} 
+              user={user}
+            />
+          )}
+
+          {/* Global Command Palette Component bound to Cmd+K */}
+          <CommandPalette 
+            isOpen={isCommandPaletteOpen} 
+            setIsOpen={setIsCommandPaletteOpen} 
+            setView={setView} 
+          />
         </>
       )}
     </div>
