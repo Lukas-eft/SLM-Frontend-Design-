@@ -193,7 +193,7 @@ export const ChatView = ({
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="flex-1 flex flex-col min-w-0 relative"
       >
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
         <header className="h-16 border-b border-white/5 flex items-center justify-end px-8 bg-black/50 backdrop-blur-xl z-40">
           <div className="flex items-center gap-6">
@@ -264,7 +264,7 @@ export const ChatView = ({
                   
                   <div className={`max-w-[80%] px-6 py-4 rounded-3xl text-[15px] leading-relaxed shadow-xl ${
                     msg.role === 'user' 
-                    ? 'bg-gradient-to-b from-zinc-800 to-zinc-900 border border-white/10 text-white rounded-tr-sm' 
+                    ? 'bg-linear-to-b from-zinc-800 to-zinc-900 border border-white/10 text-white rounded-tr-sm' 
                     : 'bg-transparent text-zinc-300 rounded-tl-sm w-full'
                   }`}>
                     {msg.role === 'user' ? (
@@ -333,7 +333,7 @@ export const ChatView = ({
         </div>
 
         {/* Input Container */}
-        <div className="px-8 pt-4 pb-6 bg-gradient-to-t from-black via-black/90 to-transparent relative z-20">
+        <div className="px-8 pt-4 pb-6 bg-linear-to-t from-black via-black/90 to-transparent relative z-20">
           <div className="max-w-4xl mx-auto">
             <div className="bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus-within:ring-1 focus-within:ring-white/20 focus-within:border-white/20 transition-all duration-300">
               
@@ -345,7 +345,7 @@ export const ChatView = ({
                 </button>
                 {attachedFiles.map((file, i) => (
                     <div key={i} className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] text-zinc-400">
-                        <span className="truncate max-w-[100px]">{file.name}</span>
+                        <span className="truncate max-w-25">{file.name}</span>
                         <button onClick={() => setAttachedFiles(f => f.filter((_, idx) => idx !== i))} className="hover:text-white text-xs ml-1">×</button>
                     </div>
                 ))}
@@ -442,7 +442,7 @@ export const ChatView = ({
                       : 'bg-zinc-900 text-zinc-600 scale-95 cursor-not-allowed border border-white/5'
                     }`}
                   >
-                    <ArrowUp className="w-4 h-4 stroke-[3]" />
+                    <ArrowUp className="w-4 h-4 stroke-3" />
                   </button>
                 </ActionTooltip>
               </div>
