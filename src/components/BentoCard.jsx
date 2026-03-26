@@ -1,3 +1,4 @@
+import { div } from 'motion/react-client';
 import React from 'react';
 
 export const BentoCard = ({ title, description, visual, className = "", children }) => {
