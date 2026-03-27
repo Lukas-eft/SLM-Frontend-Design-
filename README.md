@@ -1,7 +1,7 @@
 #  Concept: Frontend.slm Landing Page
 
-![Frontend SLM Banner](<img width="1916" height="992" alt="image" src="https://github.com/user-attachments/assets/38c68ae5-dee4-4b8a-b27e-3fbda9bda91f" />
-)
+<img width="1916" height="992" alt="image" src="https://github.com/user-attachments/assets/0f56e472-3874-46f9-b54a-60e3fb490a8f" />
+
 
 ##  Project Overview
 This repository is a **frontend design exploration** and UI/UX concept for a fictional "Small Language Model" (SLM) platform. 
