@@ -11,7 +11,7 @@ export const LandingView = ({ setView, user }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('pip install ilu-slm@latest');
+    navigator.clipboard.writeText('pip install frontend-slm@latest');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -91,7 +91,7 @@ export const LandingView = ({ setView, user }) => {
                 </div>
                 <div className="flex items-center gap-3 font-mono text-[13px] tracking-tight">
                   <span className="text-zinc-600 font-medium">$</span>
-                  <span className="text-zinc-200 font-medium">pip install ilu-slm@latest</span>
+                  <span className="text-zinc-200 font-medium">pip install frontend-slm@latest</span>
                 </div>
                 <div className="relative w-5 h-5 flex items-center justify-center">
                   <AnimatePresence mode="wait">
@@ -143,7 +143,7 @@ export const LandingView = ({ setView, user }) => {
         </div>
       </section>
 
-      {/* "What makes ILU.slm special?" Section - Bento Grid Style */}
+      {/* "What makes Frontend.slm special?" Section - Bento Grid Style */}
       <section className="max-w-7xl mx-auto px-6 py-40 space-y-16 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 bg-linear-to-b from-white/20 to-transparent" />
         
@@ -228,7 +228,7 @@ export const LandingView = ({ setView, user }) => {
               <div className="flex gap-1">
                 {[1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />)}
               </div>
-              <h3 className="text-2xl font-bold tracking-tight">ILU v1.0</h3>
+              <h3 className="text-2xl font-bold tracking-tight">Frontend v1.0</h3>
               <p className="text-sm font-medium text-zinc-500 leading-relaxed">{t.features.releaseNotes}</p>
             </div>
             <div className="relative z-10 flex justify-end mt-4">
@@ -384,7 +384,7 @@ export const LandingView = ({ setView, user }) => {
                <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 blur-[60px] rounded-full group-hover:bg-emerald-500/20 transition-colors pointer-events-none -translate-y-1/2 translate-x-1/2" />
                <Terminal className="w-8 h-8 text-zinc-400 mb-8 group-hover:text-emerald-400 transition-colors" />
                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Native CLI Integration</h3>
-               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Instantly drop into your terminal. ILU integrates flawlessly with Bash and Zsh out of the box, delivering intelligent command suggestions and shell script generation with native latency.</p>
+               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Instantly drop into your terminal. Frontend integrates flawlessly with Bash and Zsh out of the box, delivering intelligent command suggestions and shell script generation with native latency.</p>
            </motion.div>
            
            {/* Card 2 */}
@@ -397,7 +397,7 @@ export const LandingView = ({ setView, user }) => {
                <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 blur-[60px] rounded-full group-hover:bg-blue-500/20 transition-colors pointer-events-none -translate-y-1/2 translate-x-1/2" />
                <Layers className="w-8 h-8 text-zinc-400 mb-8 group-hover:text-blue-400 transition-colors" />
                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Multi-Modal Memory</h3>
-               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Built-in vector data structures ensure continuous state. ILU remembers complex context streams across heavily fragmented workspace sessions and completely isolated development environments.</p>
+               <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-400 transition-colors">Built-in vector data structures ensure continuous state. Frontend remembers complex context streams across heavily fragmented workspace sessions and completely isolated development environments.</p>
            </motion.div>
 
            {/* Card 3 */}
@@ -427,7 +427,7 @@ export const LandingView = ({ setView, user }) => {
                  <div>
                    <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Extensible Plugin Ecosystem</h3>
                    <p className="text-zinc-400 text-base leading-relaxed max-w-2xl">
-                     ILU isn't just an interface; it's a platform. Build custom middleware, hook into native system APIs, and script automated workflows using our lightweight Typescript extension architecture. Deploy your custom logic directly onto the local edge.
+                     Frontend isn't just an interface; it's a platform. Build custom middleware, hook into native system APIs, and script automated workflows using our lightweight Typescript extension architecture. Deploy your custom logic directly onto the local edge.
                    </p>
                  </div>
                </div>
@@ -439,8 +439,8 @@ export const LandingView = ({ setView, user }) => {
                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                  </div>
                  <div className="opacity-70 group-hover:opacity-100 transition-opacity whitespace-pre overflow-x-auto no-scrollbar">
-                   <span className="text-emerald-400">import</span> &#123; ILUPlugin &#125; <span className="text-emerald-400">from</span> <span className="text-amber-300">'@ilu/core'</span>;<br/><br/>
-                   <span className="text-blue-400">export</span> <span className="text-blue-400">default</span> <span className="text-purple-400">class</span> CustomAnalyzer <span className="text-purple-400">extends</span> ILUPlugin &#123;<br/>
+                   <span className="text-emerald-400">import</span> &#123; FrontendPlugin &#125; <span className="text-emerald-400">from</span> <span className="text-amber-300">'@frontend/core'</span>;<br/><br/>
+                   <span className="text-blue-400">export</span> <span className="text-blue-400">default</span> <span className="text-purple-400">class</span> CustomAnalyzer <span className="text-purple-400">extends</span> FrontendPlugin &#123;<br/>
                    &nbsp;&nbsp;<span className="text-blue-400">async</span> <span className="text-yellow-200">onMessage</span>(ctx) &#123;<br/>
                    &nbsp;&nbsp;&nbsp;&nbsp;await ctx.<span className="text-yellow-200">parseAST</span>(ctx.codeBlock);<br/>
                    &nbsp;&nbsp;&nbsp;&nbsp;return ctx.<span className="text-yellow-200">generateRefactor</span>();<br/>

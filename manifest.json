@@ -1,6 +1,6 @@
 {
-  "name": "ILU.slm",
-  "short_name": "ILU.slm",
+  "name": "Frontend.slm",
+  "short_name": "Frontend.slm",
   "description": "High efficency, privacy based lightweight AI system focused on User experience and clean code.",
   "start_url": "/?utm_source=pwa",
   "display": "standalone",
@@ -49,7 +49,7 @@
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "The minimalistic ui interface of ILU.slm"
+      "label": "The minimalistic ui interface of Frontend.slm"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Eye, EyeOff, ChevronLeft, Zap, Shield } from 'lucide-react';
+import { Logo } from '../components/Logo';
 import { FeatureCard } from '../components/FeatureCard';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -14,9 +15,8 @@ export const SignupView = ({ setView, handleSignup, showPassword, setShowPasswor
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] bg-size-[32px_32px]" />
         
         <div className="relative z-10">
-          <div className="flex items-center gap-3 mb-16 cursor-pointer" onClick={() => setView('landing')}>
-            <img src="/Logo.png" className="w-10 h-10 object-contain" alt="logo" referrerPolicy="no-referrer" />
-            <span className="text-3xl font-bold tracking-tighter">ILU</span>
+          <div onClick={() => setView('landing')}>
+            <Logo />
           </div>
           
           <div className="space-y-12 max-w-2xl">
@@ -72,7 +72,7 @@ export const SignupView = ({ setView, handleSignup, showPassword, setShowPasswor
         </div>
 
         <div className="relative z-10 flex items-center gap-6 text-xs text-zinc-600 font-medium">
-          <span>© 2026 ILU SLM</span>
+          <span>© 2026 Frontend SLM</span>
           <a href="#" className="hover:text-zinc-400 transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-zinc-400 transition-colors">Terms of Service</a>
         </div>
@@ -81,9 +81,8 @@ export const SignupView = ({ setView, handleSignup, showPassword, setShowPasswor
       {/* Right Side - Signup Form */}
       <div className="flex-1 flex items-center justify-center p-8 relative">
         <div className="absolute top-8 left-8 lg:hidden">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setView('landing')}>
-            <img src="/Logo.png" className="w-6 h-6 object-contain" alt="logo" referrerPolicy="no-referrer" />
-            <span className="font-bold tracking-tighter">ILU</span>
+          <div onClick={() => setView('landing')}>
+            <Logo size="sm" />
           </div>
         </div>
 

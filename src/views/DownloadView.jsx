@@ -16,19 +16,19 @@ export const DownloadView = ({ setView, user }) => {
     switch(osId) {
       case 'macos':
         return [
-          { id: 'apple-silicon', label: 'Apple Silicon (M1/M2/M3)', file: 'ilu-8b-pro-arm64.gguf' },
-          { id: 'intel', label: 'Intel Mac (x64)', file: 'ilu-8b-pro-x64.gguf' }
+          { id: 'apple-silicon', label: 'Apple Silicon (M1/M2/M3)', file: 'frontend-8b-pro-arm64.gguf' },
+          { id: 'intel', label: 'Intel Mac (x64)', file: 'frontend-8b-pro-x64.gguf' }
         ];
       case 'linux':
         return [
-          { id: 'x64', label: 'Linux Server (x64)', file: 'ilu-8b-pro-linux-x64.gguf' },
-          { id: 'arm64', label: 'Linux (ARM64)', file: 'ilu-8b-pro-linux-arm64.gguf' }
+          { id: 'x64', label: 'Linux Server (x64)', file: 'frontend-8b-pro-linux-x64.gguf' },
+          { id: 'arm64', label: 'Linux (ARM64)', file: 'frontend-8b-pro-linux-arm64.gguf' }
         ];
       case 'windows':
       default:
         return [
-          { id: 'x64', label: 'Windows (x64)', file: 'ilu-8b-pro-windows-x64.gguf' },
-          { id: 'arm64', label: 'Windows (ARM64)', file: 'ilu-8b-pro-windows-arm64.gguf' }
+          { id: 'x64', label: 'Windows (x64)', file: 'frontend-8b-pro-windows-x64.gguf' },
+          { id: 'arm64', label: 'Windows (ARM64)', file: 'frontend-8b-pro-windows-arm64.gguf' }
         ];
     }
   };
@@ -73,7 +73,7 @@ export const DownloadView = ({ setView, user }) => {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-7xl font-black tracking-tighter leading-tight"
           >
-            ILU-8B Pro
+            Frontend-8B Pro
           </motion.h1>
           
           <motion.p 
@@ -119,10 +119,10 @@ export const DownloadView = ({ setView, user }) => {
                       <Terminal className="w-3.5 h-3.5" /> Quick Start via CLI
                     </span>
                     <div 
-                      onClick={() => navigator.clipboard.writeText('ollama run ilu-8b-pro')}
+                      onClick={() => navigator.clipboard.writeText('ollama run frontend-8b-pro')}
                       className="flex items-center justify-between gap-6 bg-white/5 rounded-xl p-4 cursor-pointer hover:bg-white/10 transition-colors group/cmd"
                     >
-                      <code className="text-sm text-zinc-200 font-mono">ollama run ilu-8b-pro</code>
+                      <code className="text-sm text-zinc-200 font-mono">ollama run frontend-8b-pro</code>
                       <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover/cmd:text-white transition-colors">Copy</span>
                     </div>
                 </div>

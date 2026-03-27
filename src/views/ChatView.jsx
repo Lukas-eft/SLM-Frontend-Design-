@@ -146,7 +146,7 @@ export const ChatView = ({
     setTimeout(() => {
        const aiMsg = {
          role: 'assistant',
-         content: "Here is an example demonstrating Markdown and Syntax Highlighting:\n\n### Python FastAPI Snippet\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'status': 'success', 'model': 'ILU.slm'}\n```\n\nYou can run this locally using `uvicorn main:app --reload`.\n\nLet me know if you want to connect this to our dashboard API!"
+         content: "Here is an example demonstrating Markdown and Syntax Highlighting:\n\n### Python FastAPI Snippet\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'status': 'success', 'model': 'Frontend.slm'}\n```\n\nYou can run this locally using `uvicorn main:app --reload`.\n\nLet me know if you want to connect this to our dashboard API!"
        };
        setMessages(prev => [...prev, aiMsg]);
     }, 1000);
@@ -224,7 +224,7 @@ export const ChatView = ({
             >
               <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 }}} className="w-full text-center mb-16">
                 <h1 className="text-6xl font-black tracking-tighter mb-4 bg-[linear-gradient(to_right,#fff,#71717a)] bg-clip-text text-transparent">
-                  ILU<span className="text-zinc-500 font-bold">.slm</span>
+                  Frontend<span className="text-zinc-500 font-bold">.slm</span>
                 </h1>
                 <p className="text-zinc-400 text-lg font-medium">Absolute precision and speed. Built for your privacy.</p>
               </motion.div>
@@ -400,7 +400,7 @@ export const ChatView = ({
                                       exit={{ opacity: 0, y: 10 }}
                                       className="absolute bottom-full mb-2 left-0 w-40 bg-zinc-950 border border-white/10 rounded-xl overflow-hidden shadow-2xl z-10"
                                   >
-                                      {['Auto', 'ILU.slm Pro', 'ILU.slm Lite'].map((model) => (
+                                      {['Auto', 'Frontend.slm Pro', 'Frontend.slm Lite'].map((model) => (
                                           <button 
                                               key={model}
                                               onClick={() => {

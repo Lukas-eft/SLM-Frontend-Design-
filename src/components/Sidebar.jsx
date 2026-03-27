@@ -204,7 +204,7 @@ export const Sidebar = ({
               <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center shadow-lg">
                 <Command className="w-4 h-4 text-black" />
               </div>
-              <span>ILU<span className="text-zinc-500">.slm</span></span>
+              <span>Frontend<span className="text-zinc-500">.slm</span></span>
             </motion.div>
           )}
           {isSidebarCollapsed && (

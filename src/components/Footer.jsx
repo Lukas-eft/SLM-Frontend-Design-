@@ -20,7 +20,7 @@ export const Footer = ({ setView }) => {
     {
       title: t.footer.ilu,
       links: [
-        { label: 'About ILU', action: () => {} },
+        { label: 'About Frontend', action: () => {} },
         { label: 'Newsletter', action: () => {} },
         { label: 'Imprint', action: () => {} },
         { label: 'Privacy Policy', action: () => {} },

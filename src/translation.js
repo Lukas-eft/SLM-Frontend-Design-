@@ -16,7 +16,7 @@ export const translations = {
       ctaSecondary: 'View Docs'
     },
     features: {
-      title: 'What makes ILU.slm special?',
+      title: 'What makes Frontend.slm special?',
       subtitle: 'Everything you need to build great products on the web.',
       releaseNotes: 'The power of full-stack AI to the frontend. Read the release notes.',
       cards: {
@@ -52,7 +52,7 @@ export const translations = {
     },
     about: {
       title: 'Built by <br /> privacy <br /> maximalists.',
-      description: 'At ILU, we believe that intelligence shouldn\'t come at the cost of your digital sovereignty. Our mission is to democratize high-performance AI while keeping your data exactly where it belongs: with you.',
+      description: 'At Frontend, we believe that intelligence shouldn\'t come at the cost of your digital sovereignty. Our mission is to democratize high-performance AI while keeping your data exactly where it belongs: with you.',
       stats: {
         devs: 'Join 5,000+ developers',
         mission: 'building the future of private AI.'
@@ -60,10 +60,10 @@ export const translations = {
     },
     footer: {
       quicklinks: 'Quicklinks',
-      ilu: 'ILU.ai',
+      ilu: 'Frontend.slm',
       follow: 'Follow us',
-      other: 'Other ILU Sites',
-      copyright: '© 2026 ILU SLM. All rights reserved.',
+      other: 'Other Frontend Sites',
+      copyright: '© 2026 Frontend SLM. All rights reserved.',
       terms: 'Terms of Service',
       privacy: 'Privacy Policy',
       language: 'Language'
@@ -97,7 +97,7 @@ export const translations = {
       subtitle: 'Experience the next generation of privacy-first, high-performance Small Language Models built for modern developers.',
       backHome: 'Back to home',
       title: 'Create your account',
-      desc: 'Get started with ILU SLM today.',
+      desc: 'Get started with Frontend SLM today.',
       firstName: 'First Name',
       lastName: 'Last Name',
       email: 'Email Address',
@@ -120,7 +120,7 @@ export const translations = {
     },
     docs: {
       title: 'Documentation',
-      subtitle: 'Everything you need to know about ILU SLM.',
+      subtitle: 'Everything you need to know about Frontend SLM.',
       searchPlaceholder: 'Search documentation...',
       previous: 'Previous',
       next: 'Next',
@@ -164,7 +164,7 @@ export const translations = {
         },
         installation: {
           title: 'Installation',
-          body: '```bash\nnpm install @ilu/slm-sdk\n```\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
+          body: '```bash\nnpm install @frontend/slm-sdk\n```\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
         },
         'basic-usage': {
           title: 'Basic Usage',
@@ -222,7 +222,7 @@ export const translations = {
       ctaSecondary: 'Dokumentation'
     },
     features: {
-      title: 'Was macht ILU.slm besonders?',
+      title: 'Was macht Frontend.slm besonders?',
       subtitle: 'Alles, was Sie brauchen, um großartige Produkte im Web zu entwickeln.',
       releaseNotes: 'Die Power von Full-Stack AI für das Frontend. Lesen Sie die Release-Notes.',
       cards: {
@@ -258,7 +258,7 @@ export const translations = {
     },
     about: {
       title: 'Gebaut von <br /> Datenschutz- <br /> Maximalisten.',
-      description: 'Bei ILU glauben wir, dass Intelligenz nicht auf Kosten Ihrer digitalen Souveränität gehen sollte. Unsere Mission ist es, Hochleistungs-KI zu demokratisieren und Ihre Daten genau dort zu lassen, wo sie hingehören: bei Ihnen.',
+      description: 'Bei Frontend glauben wir, dass Intelligenz nicht auf Kosten Ihrer digitalen Souveränität gehen sollte. Unsere Mission ist es, Hochleistungs-KI zu demokratisieren und Ihre Daten genau dort zu lassen, wo sie hingehören: bei Ihnen.',
       stats: {
         devs: 'Schließen Sie sich 5.000+ Entwicklern an',
         mission: 'die die Zukunft der privaten KI aufbauen.'
@@ -266,10 +266,10 @@ export const translations = {
     },
     footer: {
       quicklinks: 'Quicklinks',
-      ilu: 'ILU.ai',
+      ilu: 'Frontend.slm',
       follow: 'Folgen Sie uns',
-      other: 'Andere ILU-Seiten',
-      copyright: '© 2026 ILU SLM. Alle Rechte vorbehalten.',
+      other: 'Andere Frontend-Seiten',
+      copyright: '© 2026 Frontend SLM. Alle Rechte vorbehalten.',
       terms: 'Nutzungsbedingungen',
       privacy: 'Datenschutzbestimmungen',
       language: 'Sprache'
@@ -303,7 +303,7 @@ export const translations = {
       subtitle: 'Erleben Sie die nächste Generation von datenschutzorientierten, leistungsstarken Small Language Models für moderne Entwickler.',
       backHome: 'Zurück zur Startseite',
       title: 'Konto erstellen',
-      desc: 'Starten Sie noch heute mit ILU SLM.',
+      desc: 'Starten Sie noch heute mit Frontend SLM.',
       firstName: 'Vorname',
       lastName: 'Nachname',
       email: 'E-Mail-Adresse',
@@ -326,7 +326,7 @@ export const translations = {
     },
     docs: {
       title: 'Dokumentation',
-      subtitle: 'Alles, was Sie über ILU SLM wissen müssen.',
+      subtitle: 'Alles, was Sie über Frontend SLM wissen müssen.',
       searchPlaceholder: 'Dokumentation durchsuchen...',
       previous: 'Zurück',
       next: 'Weiter',
@@ -370,7 +370,7 @@ export const translations = {
         },
         installation: {
           title: 'Installation',
-          body: '```bash\nnpm install @ilu/slm-sdk\n```\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
+          body: '```bash\nnpm install @frontend/slm-sdk\n```\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
         },
         'basic-usage': {
           title: 'Grundlegende Nutzung',

@@ -5,12 +5,12 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    const saved = localStorage.getItem('ilu_lang');
+    const saved = localStorage.getItem('frontend_lang');
     return saved || 'en';
   });
 
   useEffect(() => {
-    localStorage.setItem('ilu_lang', language);
+    localStorage.setItem('frontend_lang', language);
     document.documentElement.lang = language;
   }, [language]);
 

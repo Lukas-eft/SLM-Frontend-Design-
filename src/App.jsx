@@ -30,21 +30,21 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [view]);
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('ilu_user');
+    const savedUser = localStorage.getItem('frontend_user');
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
   const handleLogout = () => {
-    localStorage.removeItem('ilu_user');
+    localStorage.removeItem('frontend_user');
     setUser(null);
     setView('landing');
   };
 
   const handleLogin = (email, password) => {
-    const users = JSON.parse(localStorage.getItem('ilu_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('frontend_users') || '[]');
     const foundUser = users.find((u) => u.email === email && u.password === password);
     if (foundUser) {
-      localStorage.setItem('ilu_user', JSON.stringify(foundUser));
+      localStorage.setItem('frontend_user', JSON.stringify(foundUser));
       setUser(foundUser);
       setView('chat');
       return true;
@@ -53,13 +53,13 @@ export default function App() {
   };
 
   const handleSignup = (userData) => {
-    const users = JSON.parse(localStorage.getItem('ilu_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('frontend_users') || '[]');
     if (users.some((u) => u.email === userData.email)) {
       return false;
     }
     users.push(userData);
-    localStorage.setItem('ilu_users', JSON.stringify(users));
-    localStorage.setItem('ilu_user', JSON.stringify(userData));
+    localStorage.setItem('frontend_users', JSON.stringify(users));
+    localStorage.setItem('frontend_user', JSON.stringify(userData));
     setUser(userData);
     setView('chat');
     return true;

@@ -30,12 +30,12 @@ export const ProfileView = ({ setView, user, setUser, handleLogout }) => {
         
         // Update current user
         setUser(updatedUser);
-        localStorage.setItem('ilu_user', JSON.stringify(updatedUser));
+        localStorage.setItem('frontend_user', JSON.stringify(updatedUser));
         
         // Update in users list
-        const users = JSON.parse(localStorage.getItem('ilu_users') || '[]');
+        const users = JSON.parse(localStorage.getItem('frontend_users') || '[]');
         const updatedUsers = users.map(u => u.email === user.email ? updatedUser : u);
-        localStorage.setItem('ilu_users', JSON.stringify(updatedUsers));
+        localStorage.setItem('frontend_users', JSON.stringify(updatedUsers));
         
         setIsUploading(false);
       };
@@ -50,16 +50,16 @@ export const ProfileView = ({ setView, user, setUser, handleLogout }) => {
       return;
     }
     
-    const users = JSON.parse(localStorage.getItem('ilu_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('frontend_users') || '[]');
     const userIndex = users.findIndex(u => u.email === user.email);
     
     if (userIndex !== -1 && users[userIndex].password === passwordForm.current) {
       users[userIndex].password = passwordForm.new;
-      localStorage.setItem('ilu_users', JSON.stringify(users));
+      localStorage.setItem('frontend_users', JSON.stringify(users));
       
       const updatedUser = { ...user, password: passwordForm.new };
       setUser(updatedUser);
-      localStorage.setItem('ilu_user', JSON.stringify(updatedUser));
+      localStorage.setItem('frontend_user', JSON.stringify(updatedUser));
       
       setPasswordStatus('Password updated successfully');
       setTimeout(() => {
@@ -79,7 +79,7 @@ export const ProfileView = ({ setView, user, setUser, handleLogout }) => {
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem('ilu_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('frontend_users') || '[]');
     const emailExists = users.some(u => u.email === newEmail);
 
     if (emailExists) {
@@ -92,8 +92,8 @@ export const ProfileView = ({ setView, user, setUser, handleLogout }) => {
       const updatedUser = { ...user, email: newEmail };
       users[userIndex].email = newEmail;
       
-      localStorage.setItem('ilu_users', JSON.stringify(users));
-      localStorage.setItem('ilu_user', JSON.stringify(updatedUser));
+      localStorage.setItem('frontend_users', JSON.stringify(users));
+      localStorage.setItem('frontend_user', JSON.stringify(updatedUser));
       setUser(updatedUser);
       
       setEmailStatus('Email updated successfully');

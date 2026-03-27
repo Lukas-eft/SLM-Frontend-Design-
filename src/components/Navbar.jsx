@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, User } from 'lucide-react';
+import { Menu, User, ShieldCheck } from 'lucide-react';
+import { Logo } from './Logo';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Navbar = ({ setView, user }) => {
@@ -8,10 +9,8 @@ export const Navbar = ({ setView, user }) => {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-4 cursor-pointer group" onClick={() => setView('landing')}>
-          <img src="/Logo.png" className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300" alt="logo" referrerPolicy="no-referrer" />
-          <div className="h-6 w-px bg-white/20 hidden sm:block" />
-          <span className="font-bold text-xl tracking-tighter hidden sm:block">ILU<span className="text-zinc-500">.slm</span></span>
+        <div onClick={() => setView('landing')}>
+          <Logo />
         </div>
         
         <div className="hidden md:flex items-center gap-8 text-[13px] font-medium text-zinc-400">

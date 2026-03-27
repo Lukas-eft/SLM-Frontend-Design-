@@ -8,23 +8,23 @@ export const SettingsView = ({ setView }) => {
   const [activeTab, setActiveTab] = useState('api');
   
   // States for API Config
-  const [apiEndpoint, setApiEndpoint] = useState(localStorage.getItem('ilu_api_endpoint') || 'http://localhost:11434');
-  const [apiKey, setApiKey] = useState(localStorage.getItem('ilu_api_key') || '');
-  const [selectedProvider, setSelectedProvider] = useState(localStorage.getItem('ilu_api_provider') || 'ollama');
+  const [apiEndpoint, setApiEndpoint] = useState(localStorage.getItem('frontend_api_endpoint') || 'http://localhost:11434');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('frontend_api_key') || '');
+  const [selectedProvider, setSelectedProvider] = useState(localStorage.getItem('frontend_api_provider') || 'ollama');
   
   // State for System Prompt
-  const [systemPrompt, setSystemPrompt] = useState(localStorage.getItem('ilu_system_prompt') || 'You are a highly capable AI assistant running via ILU.slm interface...');
+  const [systemPrompt, setSystemPrompt] = useState(localStorage.getItem('frontend_system_prompt') || 'You are a highly capable AI assistant running via Frontend.slm interface...');
   
   const [isSaving, setIsSaving] = useState(false);
 
   const handleSave = () => {
     setIsSaving(true);
     if (activeTab === 'api') {
-      localStorage.setItem('ilu_api_endpoint', apiEndpoint);
-      localStorage.setItem('ilu_api_key', apiKey);
-      localStorage.setItem('ilu_api_provider', selectedProvider);
+      localStorage.setItem('frontend_api_endpoint', apiEndpoint);
+      localStorage.setItem('frontend_api_key', apiKey);
+      localStorage.setItem('frontend_api_provider', selectedProvider);
     } else if (activeTab === 'system') {
-      localStorage.setItem('ilu_system_prompt', systemPrompt);
+      localStorage.setItem('frontend_system_prompt', systemPrompt);
     }
     setTimeout(() => setIsSaving(false), 800);
   };
