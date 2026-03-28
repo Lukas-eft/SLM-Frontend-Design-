@@ -25,10 +25,10 @@ export const LandingView = ({ setView, user }) => {
         {/* Layered Background System */}
         <div className="absolute inset-0 z-0">
           {/* 1. Base Grid (Dot) */}
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] bg-size-[32px_32px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff25_1px,transparent_1px)] bg-size-[32px_32px]" />
           
           {/* 2. Secondary Line Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_20%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_20%,transparent_100%)]" />
 
           {/* 3. Primary Glow (Central) */}
           <motion.div 
@@ -158,7 +158,7 @@ export const LandingView = ({ setView, user }) => {
             description={t.features.cards.optimizations.description}
             visual={
               <>
-                <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-size-[10px_10px]" />
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] bg-size-[10px_10px]" />
                 <div className="relative z-10 flex flex-col gap-2 w-3/4">
                   <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                     <motion.div 
@@ -223,7 +223,7 @@ export const LandingView = ({ setView, user }) => {
           />
 
           <div className="md:col-span-1 p-8 rounded-3xl bg-[#0A0A0A] border border-white/10 flex flex-col justify-between group/card hover:border-white/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(255,255,255,0.06)] relative overflow-hidden cursor-pointer">
-            <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-size-[20px_20px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] bg-size-[20px_20px]" />
             <div className="relative z-10 space-y-4">
               <div className="flex gap-1">
                 {[1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />)}
@@ -300,7 +300,7 @@ export const LandingView = ({ setView, user }) => {
             className="relative aspect-square lg:aspect-video rounded-3xl bg-zinc-900/20 border border-white/10 overflow-hidden group"
           >
             {/* Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[20px_20px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[20px_20px]" />
             
             <div className="absolute inset-0 p-8 flex flex-col gap-4">
               <div className="flex-1 flex gap-4 overflow-hidden">
@@ -316,7 +316,7 @@ export const LandingView = ({ setView, user }) => {
 
                 {/* Main Chart Area */}
                 <div className="flex-1 border border-white/10 bg-black/20 rounded-lg relative overflow-hidden flex items-end justify-around p-6 gap-2">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-size-[10px_10px]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-size-[10px_10px]" />
                   
                   {[45, 12, 38, 95, 56, 28, 82, 15, 48, 52, 38, 72, 72, 52, 95, 68].map((height, i) => (
                     <motion.div
