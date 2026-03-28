@@ -49,8 +49,8 @@ export const DownloadView = ({ setView, user }) => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#ffffff08_0%,transparent_100%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[4rem_4rem] pointer-events-none" />
       
-      <div className="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-zinc-500/10 blur-[140px] rounded-full mix-blend-screen animate-pulse duration-[3000ms] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-zinc-600/10 blur-[140px] rounded-full mix-blend-screen animate-pulse duration-[3000ms] delay-500 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-120 h-120 bg-zinc-500/10 blur-[140px] rounded-full mix-blend-screen animate-pulse duration-3000 pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-120 h-120 bg-zinc-600/10 blur-[140px] rounded-full mix-blend-screen animate-pulse duration-3000 delay-500 pointer-events-none" />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 h-20 border-b border-white/5 bg-black/50 backdrop-blur-xl z-50 flex items-center justify-between px-6 lg:px-12">
@@ -91,7 +91,7 @@ export const DownloadView = ({ setView, user }) => {
         >
            {/* Subtle metallic reflection */}
            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.05),transparent_100%)] pointer-events-none" />
-           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+           <div className="absolute top-0 right-0 w-150 h-150 bg-white/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
            
            <div className="relative z-10 w-full">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 border-b border-white/5 pb-12 w-full">
@@ -105,16 +105,16 @@ export const DownloadView = ({ setView, user }) => {
                     The optimal balance of speed and reasoning. Perfect for local coding assistance, structured data parsing, and daily offline workflows.
                   </p>
                   <div className="flex items-center gap-3">
-                    <span className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/5 text-xs font-bold uppercase tracking-widest text-zinc-300 flex items-center gap-2">
+                    <span className="px-4 py-2 rounded-xl bg-white/3 border border-white/5 text-xs font-bold uppercase tracking-widest text-zinc-300 flex items-center gap-2">
                         <HardDrive className="w-4 h-4" /> 4.8 GB
                     </span>
-                    <span className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/5 text-xs font-bold uppercase tracking-widest text-zinc-300 flex items-center gap-2">
+                    <span className="px-4 py-2 rounded-xl bg-white/3 border border-white/5 text-xs font-bold uppercase tracking-widest text-zinc-300 flex items-center gap-2">
                         <Cpu className="w-4 h-4" /> 8 GB VRAM
                     </span>
                   </div>
                 </div>
                 
-                <div className="shrink-0 bg-[#000000] border border-white/10 rounded-3xl p-6 flex flex-col gap-4 md:max-w-[340px] shadow-2xl">
+                <div className="shrink-0 bg-[#000000] border border-white/10 rounded-3xl p-6 flex flex-col gap-4 md:max-w-85 shadow-2xl">
                     <span className="text-[11px] font-bold tracking-widest uppercase text-zinc-500 flex items-center gap-2">
                       <Terminal className="w-3.5 h-3.5" /> Quick Start via CLI
                     </span>
@@ -158,7 +158,7 @@ export const DownloadView = ({ setView, user }) => {
                         className={`w-full p-8 rounded-3xl flex flex-col justify-between items-start gap-6 transition-all border ${
                           downloadingModel === `${activeOS}-${arch.id}`
                             ? 'bg-zinc-900 border-zinc-700 cursor-wait'
-                            : 'bg-black/40 border-white/5 hover:border-white/20 hover:bg-white/[0.03] group hover:-translate-y-1 hover:shadow-2xl'
+                            : 'bg-black/40 border-white/5 hover:border-white/20 hover:bg-white/3 group hover:-translate-y-1 hover:shadow-2xl'
                         }`}
                       >
                         <div className="w-full flex items-center justify-between">

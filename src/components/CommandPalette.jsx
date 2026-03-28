@@ -25,7 +25,7 @@ export const CommandPalette = ({ isOpen, setIsOpen, setView }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]">
+        <div className="fixed inset-0 z-100 flex items-start justify-center pt-[15vh]">
           {/* Backdrop */}
           <motion.div 
             initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export const CommandPalette = ({ isOpen, setIsOpen, setView }) => {
                 </div>
               </div>
 
-              <Command.List className="max-h-[300px] overflow-y-auto p-2 no-scrollbar">
+              <Command.List className="max-h-75 overflow-y-auto p-2 no-scrollbar">
                 <Command.Empty className="py-6 text-center text-sm text-zinc-500">No results found.</Command.Empty>
 
                 <Command.Group heading={<span className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest px-2 pb-2 block pt-2">Navigation</span>}>
